@@ -27,6 +27,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 
 
 - Reinforcement Learning Libraries
+    - [JaxMARL](https://github.com/FLAIROx/JaxMARL) - Multi-Agent Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/FLAIROx/JaxMARL?style=social" align="center">
     - Algorithms
         - [cleanrl](https://github.com/vwxyzjn/cleanrl) - High-quality single file implementation of Deep Reinforcement Learning algorithms with research-friendly features (PPO, DQN, C51, DDPG, TD3, SAC, PPG). <img src="https://img.shields.io/github/stars/vwxyzjn/cleanrl?style=social" align="center">
         - [rlax](https://github.com/google-deepmind/rlax) - a library built on top of JAX that exposes useful building blocks for implementing reinforcement learning agents. <img src="https://img.shields.io/github/stars/google-deepmind/rlax?style=social" align="center">
@@ -37,6 +38,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [jumanji](https://github.com/instadeepai/jumanji) - 🕹️ A diverse suite of scalable reinforcement learning environments in JAX. <img src="https://img.shields.io/github/stars/instadeepai/jumanji?style=social" align="center">
         - [gymnax](https://github.com/RobertTLange/gymnax) - RL Environments in JAX 🌍. <img src="https://img.shields.io/github/stars/RobertTLange/gymnax?style=social" align="center">
         - [brax](https://github.com/google/brax) - Massively parallel rigidbody physics simulation on accelerator hardware. <img src="https://img.shields.io/github/stars/google/brax?style=social" align="center">
+        - [craftax](https://github.com/MichaelTMatthews/Craftax) - (Crafter + NetHack) in JAX. ICML 2024 Spotlight. <img src="https://img.shields.io/github/stars/MichaelTMatthews/Craftax?style=social" align="center">
 
 
 - Natural Language Processing Libraries
@@ -102,7 +104,8 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [neural-tangents](https://github.com/google/neural-tangents) - Fast and Easy Infinite Neural Networks in Python. <img src="https://img.shields.io/github/stars/google/neural-tangents?style=social" align="center">
 - [jax-fem](https://github.com/deepmodeling/jax-fem) - Differentiable Finite Element Method with JAX. <img src="https://img.shields.io/github/stars/deepmodeling/jax-fem?style=social" align="center">
 - [veros](https://github.com/team-ocean/veros) - The versatile ocean simulator, in pure Python, powered by JAX. <img src="https://img.shields.io/github/stars/team-ocean/veros?style=social" align="center">
-- [JAXFLUIDS](https://github.com/tumaer/JAXFLUIDS) - Differentiable Fluid Dynamics Package.  <img src="https://img.shields.io/github/stars/tumaer/JAXFLUIDS?style=social" align="center">
+- [JAXFLUIDS](https://github.com/tumaer/JAXFLUIDS) - Differentiable Fluid Dynamics Package. <img src="https://img.shields.io/github/stars/tumaer/JAXFLUIDS?style=social" align="center">
+- [klujax](https://github.com/flaport/klujax) - Solve sparse linear systems in JAX using the KLU algorithm. <img src="https://img.shields.io/github/stars/flaport/klujax?style=social" align="center">
 
 
 ### Up and Coming Libraries
