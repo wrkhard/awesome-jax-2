@@ -39,6 +39,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [gymnax](https://github.com/RobertTLange/gymnax) - RL Environments in JAX 🌍. <img src="https://img.shields.io/github/stars/RobertTLange/gymnax?style=social" align="center">
         - [brax](https://github.com/google/brax) - Massively parallel rigidbody physics simulation on accelerator hardware. <img src="https://img.shields.io/github/stars/google/brax?style=social" align="center">
         - [craftax](https://github.com/MichaelTMatthews/Craftax) - (Crafter + NetHack) in JAX. ICML 2024 Spotlight. <img src="https://img.shields.io/github/stars/MichaelTMatthews/Craftax?style=social" align="center">
+        - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
 
 
 - Natural Language Processing Libraries
@@ -106,6 +107,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [veros](https://github.com/team-ocean/veros) - The versatile ocean simulator, in pure Python, powered by JAX. <img src="https://img.shields.io/github/stars/team-ocean/veros?style=social" align="center">
 - [JAXFLUIDS](https://github.com/tumaer/JAXFLUIDS) - Differentiable Fluid Dynamics Package. <img src="https://img.shields.io/github/stars/tumaer/JAXFLUIDS?style=social" align="center">
 - [klujax](https://github.com/flaport/klujax) - Solve sparse linear systems in JAX using the KLU algorithm. <img src="https://img.shields.io/github/stars/flaport/klujax?style=social" align="center">
+- [coreax](https://github.com/gchq/coreax) - A library for coreset algorithms, written in Jax for fast execution and GPU support. <img src="https://img.shields.io/github/stars/gchq/coreax?style=social" align="center">
 
 
 ### Up and Coming Libraries
