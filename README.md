@@ -40,6 +40,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [brax](https://github.com/google/brax) - Massively parallel rigidbody physics simulation on accelerator hardware. <img src="https://img.shields.io/github/stars/google/brax?style=social" align="center">
         - [craftax](https://github.com/MichaelTMatthews/Craftax) - (Crafter + NetHack) in JAX. ICML 2024 Spotlight. <img src="https://img.shields.io/github/stars/MichaelTMatthews/Craftax?style=social" align="center">
         - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
+        - [JaxGCRL](https://github.com/MichalBortkiewicz/JaxGCRL) - Goal-Conditioned Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/MichalBortkiewicz/JaxGCRL?style=social" align="center">
 
 
 - Natural Language Processing Libraries
