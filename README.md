@@ -41,6 +41,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [craftax](https://github.com/MichaelTMatthews/Craftax) - (Crafter + NetHack) in JAX. ICML 2024 Spotlight. <img src="https://img.shields.io/github/stars/MichaelTMatthews/Craftax?style=social" align="center">
         - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
         - [JaxGCRL](https://github.com/MichalBortkiewicz/JaxGCRL) - Goal-Conditioned Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/MichalBortkiewicz/JaxGCRL?style=social" align="center">
+        - [Kinetix](https://github.com/FLAIROx/Kinetix) - Reinforcement learning on general 2D physics environments in JAX. ICLR 2025 Oral. <img src="https://img.shields.io/github/stars/FLAIROx/Kinetix?style=social" align="center">
 
 
 - Natural Language Processing Libraries
@@ -109,6 +110,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [JAXFLUIDS](https://github.com/tumaer/JAXFLUIDS) - Differentiable Fluid Dynamics Package. <img src="https://img.shields.io/github/stars/tumaer/JAXFLUIDS?style=social" align="center">
 - [klujax](https://github.com/flaport/klujax) - Solve sparse linear systems in JAX using the KLU algorithm. <img src="https://img.shields.io/github/stars/flaport/klujax?style=social" align="center">
 - [coreax](https://github.com/gchq/coreax) - A library for coreset algorithms, written in Jax for fast execution and GPU support. <img src="https://img.shields.io/github/stars/gchq/coreax?style=social" align="center">
+- [fdtdx](https://github.com/ymahlau/fdtdx) - Electromagnetic FDTD Simulations in JAX. <img src="https://img.shields.io/github/stars/ymahlau/fdtdx?style=social" align="center">
 
 
 ### Up and Coming Libraries
