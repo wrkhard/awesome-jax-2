@@ -33,6 +33,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [rlax](https://github.com/google-deepmind/rlax) - a library built on top of JAX that exposes useful building blocks for implementing reinforcement learning agents. <img src="https://img.shields.io/github/stars/google-deepmind/rlax?style=social" align="center">
         - [purejaxrl](https://github.com/luchris429/purejaxrl) - Really Fast End-to-End Jax RL Implementations. <img src="https://img.shields.io/github/stars/luchris429/purejaxrl?style=social" align="center">
         - [Mava](https://github.com/instadeepai/Mava) - 🦁 A research-friendly codebase for fast experimentation of multi-agent reinforcement learning in JAX. <img src="https://img.shields.io/github/stars/instadeepai/Mava?style=social" align="center">
+        - [Stoix](https://github.com/EdanToledo/Stoix) - 🏛️A research-friendly codebase for fast experimentation of single-agent reinforcement learning in JAX • End-to-End JAX RL. <img src="https://img.shields.io/github/stars/EdanToledo/Stoix?style=social" align="center">
     - Environments
         - [pgx](https://github.com/sotetsuk/pgx) - Vectorized RL game environments in JAX. <img src="https://img.shields.io/github/stars/sotetsuk/pgx?style=social" align="center">
         - [jumanji](https://github.com/instadeepai/jumanji) - 🕹️ A diverse suite of scalable reinforcement learning environments in JAX. <img src="https://img.shields.io/github/stars/instadeepai/jumanji?style=social" align="center">
@@ -42,7 +43,6 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
         - [JaxGCRL](https://github.com/MichalBortkiewicz/JaxGCRL) - Goal-Conditioned Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/MichalBortkiewicz/JaxGCRL?style=social" align="center">
         - [Kinetix](https://github.com/FLAIROx/Kinetix) - Reinforcement learning on general 2D physics environments in JAX. ICLR 2025 Oral. <img src="https://img.shields.io/github/stars/FLAIROx/Kinetix?style=social" align="center">
-        - [Stoix](https://github.com/EdanToledo/Stoix) - 🏛️A research-friendly codebase for fast experimentation of single-agent reinforcement learning in JAX • End-to-End JAX RL. <img src="https://img.shields.io/github/stars/EdanToledo/Stoix?style=social" align="center">
 
 
 - Natural Language Processing Libraries
