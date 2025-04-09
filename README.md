@@ -42,6 +42,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
         - [JaxGCRL](https://github.com/MichalBortkiewicz/JaxGCRL) - Goal-Conditioned Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/MichalBortkiewicz/JaxGCRL?style=social" align="center">
         - [Kinetix](https://github.com/FLAIROx/Kinetix) - Reinforcement learning on general 2D physics environments in JAX. ICLR 2025 Oral. <img src="https://img.shields.io/github/stars/FLAIROx/Kinetix?style=social" align="center">
+        - [Stoix](https://github.com/EdanToledo/Stoix) - 🏛️A research-friendly codebase for fast experimentation of single-agent reinforcement learning in JAX • End-to-End JAX RL. <img src="https://img.shields.io/github/stars/EdanToledo/Stoix?style=social" align="center">
 
 
 - Natural Language Processing Libraries
