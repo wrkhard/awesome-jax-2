@@ -112,6 +112,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [klujax](https://github.com/flaport/klujax) - Solve sparse linear systems in JAX using the KLU algorithm. <img src="https://img.shields.io/github/stars/flaport/klujax?style=social" align="center">
 - [coreax](https://github.com/gchq/coreax) - A library for coreset algorithms, written in Jax for fast execution and GPU support. <img src="https://img.shields.io/github/stars/gchq/coreax?style=social" align="center">
 - [fdtdx](https://github.com/ymahlau/fdtdx) - Electromagnetic FDTD Simulations in JAX. <img src="https://img.shields.io/github/stars/ymahlau/fdtdx?style=social" align="center">
+- [Jaxley](https://github.com/jaxleyverse/jaxley) - Differentiable neuron simulations with biophysical detail on CPU, GPU, or TPU. <img src="https://img.shields.io/github/stars/jaxleyverse/jaxley?style=social" align="center">
 
 
 ### Up and Coming Libraries
