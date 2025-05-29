@@ -78,6 +78,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [GPJax](https://github.com/JaxGaussianProcesses/GPJax) - Gaussian processes in JAX. <img src="https://img.shields.io/github/stars/JaxGaussianProcesses/GPJax?style=social" align="center">
 - [tinygp](https://github.com/dfm/tinygp) - The tiniest of Gaussian Process libraries. <img src="https://img.shields.io/github/stars/dfm/tinygp?style=social" align="center">
 - [Diffrax](https://github.com/patrick-kidger/diffrax) - Numerical differential equation solvers in JAX. Autodifferentiable and GPU-capable. <img src="https://img.shields.io/github/stars/patrick-kidger/diffrax?style=social" align="center">
+- [probdiffeq](https://github.com/pnkraemer/probdiffeq) - Probabilistic solvers for differential equations in JAX. Adaptive ODE solvers with calibration, state-space model factorisations, and custom information operators. Compatible with the broader JAX scientific computing ecosystem. <img src="https://img.shields.io/github/stars/pnkraemer/probdiffeq?style=social" align="center">
 - [jax-md](https://github.com/jax-md/jax-md) - Differentiable, Hardware Accelerated, Molecular Dynamics. <img src="https://img.shields.io/github/stars/jax-md/jax-md?style=social" align="center">
 - [lineax](https://github.com/patrick-kidger/lineax) - Linear solvers in JAX and Equinox. <img src="https://img.shields.io/github/stars/patrick-kidger/lineax?style=social" align="center">
 - [optimistix](https://github.com/patrick-kidger/optimistix) - Nonlinear optimisation (root-finding, least squares, etc.) in JAX+Equinox. <img src="https://img.shields.io/github/stars/patrick-kidger/optimistix?style=social" align="center">
@@ -113,6 +114,8 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [coreax](https://github.com/gchq/coreax) - A library for coreset algorithms, written in Jax for fast execution and GPU support. <img src="https://img.shields.io/github/stars/gchq/coreax?style=social" align="center">
 - [fdtdx](https://github.com/ymahlau/fdtdx) - Electromagnetic FDTD Simulations in JAX. <img src="https://img.shields.io/github/stars/ymahlau/fdtdx?style=social" align="center">
 - [Jaxley](https://github.com/jaxleyverse/jaxley) - Differentiable neuron simulations with biophysical detail on CPU, GPU, or TPU. <img src="https://img.shields.io/github/stars/jaxleyverse/jaxley?style=social" align="center">
+- [torch2jax](https://github.com/rdyro/torch2jax) - Wraps PyTorch code in a JIT-compatible way for JAX. Supports automatically defining gradients for reverse-mode AutoDiff. <img src="https://img.shields.io/github/stars/rdyro/torch2jax?style=social" align="center">
+- [cola](https://github.com/wilson-labs/cola) - Compositional Linear Algebra.  <img src="https://img.shields.io/github/stars/wilson-labs/cola?style=social" align="center">
 
 
 ### Up and Coming Libraries
