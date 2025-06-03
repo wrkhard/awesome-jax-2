@@ -73,6 +73,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
     - [blackjax](https://github.com/blackjax-devs/blackjax) - BlackJAX is a Bayesian Inference library designed for ease of use, speed and modularity. <img src="https://img.shields.io/github/stars/blackjax-devs/blackjax?style=social" align="center">
     - [bayex](https://github.com/alonfnt/bayex) - Minimal Implementation of Bayesian Optimization in JAX. <img src="https://img.shields.io/github/stars/alonfnt/bayex?style=social" align="center">
     - [efax](https://github.com/NeilGirdhar/efax) - Exponential families for JAX. <img src="https://img.shields.io/github/stars/NeilGirdhar/efax?style=social" align="center">
+    - [jaxns](https://github.com/Joshuaalbert/jaxns) - Probabilistic Programming and Nested sampling in JAX. <img src="https://img.shields.io/github/stars/Joshuaalbert/jaxns?style=social" align="center">
 
 
 - [GPJax](https://github.com/JaxGaussianProcesses/GPJax) - Gaussian processes in JAX. <img src="https://img.shields.io/github/stars/JaxGaussianProcesses/GPJax?style=social" align="center">
