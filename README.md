@@ -43,6 +43,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
         - [navix](https://github.com/epignatelli/navix) - Accelerated minigrid environments with JAX. <img src="https://img.shields.io/github/stars/epignatelli/navix?style=social" align="center">
         - [JaxGCRL](https://github.com/MichalBortkiewicz/JaxGCRL) - Goal-Conditioned Reinforcement Learning with JAX. <img src="https://img.shields.io/github/stars/MichalBortkiewicz/JaxGCRL?style=social" align="center">
         - [Kinetix](https://github.com/FLAIROx/Kinetix) - Reinforcement learning on general 2D physics environments in JAX. ICLR 2025 Oral. <img src="https://img.shields.io/github/stars/FLAIROx/Kinetix?style=social" align="center">
+        - [XLand-MiniGrid](https://github.com/dunnolab/xland-minigrid) - JAX-accelerated Meta-Reinforcement Learning Environments Inspired by XLand and MiniGrid 🏎️. <img src="https://img.shields.io/github/stars/dunnolab/xland-minigrid?style=social" align="center">
 
 
 - Natural Language Processing Libraries
@@ -156,6 +157,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 
 - [whisper-jax](https://github.com/sanchit-gandhi/whisper-jax) - JAX implementation of OpenAI's Whisper model for up to 70x speed-up on TPU. <img src="https://img.shields.io/github/stars/sanchit-gandhi/whisper-jax?style=social" align="center">
 - [esm2quinox](https://github.com/patrick-kidger/esm2quinox) - An implementation of ESM2 in Equinox+JAX. <img src="https://img.shields.io/github/stars/patrick-kidger/esm2quinox?style=social" align="center">
+
 
 ## Tutorials and Blog Posts
 
