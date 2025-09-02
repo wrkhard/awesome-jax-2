@@ -118,6 +118,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [Jaxley](https://github.com/jaxleyverse/jaxley) - Differentiable neuron simulations with biophysical detail on CPU, GPU, or TPU. <img src="https://img.shields.io/github/stars/jaxleyverse/jaxley?style=social" align="center">
 - [torch2jax](https://github.com/rdyro/torch2jax) - Wraps PyTorch code in a JIT-compatible way for JAX. Supports automatically defining gradients for reverse-mode AutoDiff. <img src="https://img.shields.io/github/stars/rdyro/torch2jax?style=social" align="center">
 - [cola](https://github.com/wilson-labs/cola) - Compositional Linear Algebra.  <img src="https://img.shields.io/github/stars/wilson-labs/cola?style=social" align="center">
+- [laplax](https://github.com/laplax-org/laplax) - Laplace approximations in JAX. <img src="https://img.shields.io/github/stars/laplax-org/laplax?style=social" align="center">
 
 
 ### Up and Coming Libraries
