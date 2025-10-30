@@ -119,6 +119,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [torch2jax](https://github.com/rdyro/torch2jax) - Wraps PyTorch code in a JIT-compatible way for JAX. Supports automatically defining gradients for reverse-mode AutoDiff. <img src="https://img.shields.io/github/stars/rdyro/torch2jax?style=social" align="center">
 - [cola](https://github.com/wilson-labs/cola) - Compositional Linear Algebra.  <img src="https://img.shields.io/github/stars/wilson-labs/cola?style=social" align="center">
 - [laplax](https://github.com/laplax-org/laplax) - Laplace approximations in JAX. <img src="https://img.shields.io/github/stars/laplax-org/laplax?style=social" align="center">
+- [thrml](https://github.com/extropic-ai/thrml) - Thermodynamic Hypergraphical Model Library. <img src="https://img.shields.io/github/stars/extropic-ai/thrml?style=social" align="center">
 
 
 ### Up and Coming Libraries
