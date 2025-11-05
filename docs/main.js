@@ -1,168 +1,262 @@
-$(document).ready(function () {
-  const tbody = $("#softwareTable tbody");
+$(document).ready(function() {
 
-  softwareData.forEach((item) => {
-    const row = $("<tr></tr>");
-
-    const nameTd = $("<td></td>").text(item.name);
-
-    const typeTd = $("<td></td>").text(item.type);
-
-    const repoLink = $("<a></a>")
-      .attr("href", item.repo)
-      .attr("target", "_blank")
-      .text(item.repo.replace("https://github.com/", ""));
-    const repoTd = $("<td></td>").append(repoLink);
-
-    const starsTd = $("<td></td>").text(item.stars);
-
-    const dependenciesTd = $("<td></td>").addClass("dependencies");
-    (item.dependencies || []).forEach((dep) => {
-      const depLink = $("<a></a>")
-        .attr("href", "#")
-        .addClass("dependency-link")
-        .text(dep);
-      dependenciesTd.append(depLink).append(" ");
-    });
-
-    const statusTd = $("<td></td>").text(item.status);
-
-    if (item.status === "Inactive") {
-      row.addClass("inactive-row");
-    }
-
-    row.append(nameTd);
-    row.append(typeTd);
-    row.append(repoTd);
-    row.append(starsTd);
-    row.append(dependenciesTd);
-    row.append(statusTd);
-
-    tbody.append(row);
-
-    // TODO: use api key to get around rate limiting and get stars,
-    // last commit, and make inactive/active automatically from url
-  });
-
-  const table = $("#softwareTable").DataTable({
-    pageLength: 10,
-    lengthMenu: [
-      [5, 10, 25, -1],
-      [5, 10, 25, "All"],
-    ],
-    columnDefs: [
-      // Make columns not sortable
-      { targets: [1, 4, 5], orderable: false },
-    ],
-  });
-
-  const allTypes = new Set();
-  softwareData.forEach((item) => allTypes.add(item.type));
-  allTypes.forEach((typeVal) => {
-    const li = $("<li></li>");
-    const link = $("<a></a>")
-      .addClass("dropdown-item")
-      .attr("href", "#")
-      .text(typeVal);
-    link.on("click", function (e) {
-      e.preventDefault();
-      table.column(1).search(typeVal, false, false).draw();
-    });
-    li.append(link);
-    $("#typeDropdown").append(li);
-  });
-
-  const allDeps = new Set();
-  softwareData.forEach((item) => {
-    (item.dependencies || []).forEach((dep) => allDeps.add(dep));
-  });
-  allDeps.forEach((depVal) => {
-    const li = $("<li></li>");
-    const link = $("<a></a>")
-      .addClass("dropdown-item")
-      .attr("href", "#")
-      .text(depVal);
-    link.on("click", function (e) {
-      e.preventDefault();
-      table.column(4).search(depVal, false, false).draw();
-    });
-    li.append(link);
-    $("#dependenciesDropdown").append(li);
-  });
-
-  // Also allow clicking the "bubble" itself
-  $("#softwareTable tbody").on("click", ".dependency-link", function (e) {
-    e.preventDefault();
-    const clickedDep = $(this).text().trim();
-    table.column(4).search(clickedDep, false, false).draw();
-  });
-
-  const possibleStatus = ["Active", "Inactive"];
-  possibleStatus.forEach((stat) => {
-    const li = $("<li></li>");
-    const link = $("<a></a>")
-      .addClass("dropdown-item")
-      .attr("href", "#")
-      .text(stat);
-    link.on("click", function (e) {
-      e.preventDefault();
-      table.column(5).search(stat, false, false).draw();
-    });
-    li.append(link);
-    $("#statusDropdown").append(li);
-  });
-
-  $("#clearTypeFilter").on("click", function () {
-    table.column(1).search("").draw();
-  });
-  $("#clearDependencyFilter").on("click", function () {
-    table.column(4).search("").draw();
-  });
-  $("#clearStatusFilter").on("click", function () {
-    table.column(5).search("").draw();
-  });
-
-  table.on("draw", function () {
-    const depFilter = table.column(4).search();
-    if (!depFilter) {
-      $(".dependency-link").removeClass("filtered-dep");
-    } else {
-      $(".dependency-link").each(function () {
-        const depName = $(this).text().trim();
-        if (depName === depFilter) {
-          $(this).addClass("filtered-dep");
-        } else {
-          $(this).removeClass("filtered-dep");
-        }
-      });
-    }
-  });
-
-  // see TODO
-  function fetchStarsFromGitHub(githubUrl, starsCell) {
-    const match = githubUrl.match(/github\.com\/([^/]+)\/([^/]+)(\/|$)/);
-    if (!match) {
-      // If it's not a valid GitHub URL, just show N/A
-      starsCell.text("N/A");
-      return;
-    }
-    const owner = match[1];
-    const repoName = match[2];
-    const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
-
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP " + response.status);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        starsCell.text(data.stargazers_count ?? "??");
-      })
-      .catch((err) => {
-        console.error("GitHub API error:", apiUrl, err);
-        starsCell.text("Error");
-      });
+  // Check if data exists
+  if (typeof awesomeJaxData === 'undefined') {
+    console.error('Data not found. Please run: npm run build');
+    $('#softwareTable tbody').html(`
+      <tr>
+        <td colspan="6" class="text-center">
+          <div class="alert alert-warning">
+            No data found. Please run <code>npm run build</code> to generate data.
+          </div>
+        </td>
+      </tr>
+    `);
+    return;
   }
+
+  let table;
+  let currentCategoryFilter = null;
+  let currentStatusFilter = null;
+
+  // Format date
+  function formatDate(dateString) {
+    if (!dateString) return 'Unknown';
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 1) {
+      return 'Today';
+    } else if (diffDays < 7) {
+      return `${diffDays} days ago`;
+    } else if (diffDays < 30) {
+      const weeks = Math.floor(diffDays / 7);
+      return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
+    } else if (diffDays < 365) {
+      const months = Math.floor(diffDays / 30);
+      return `${months} month${months > 1 ? 's' : ''} ago`;
+    } else {
+      const years = Math.floor(diffDays / 365);
+      return `${years} year${years > 1 ? 's' : ''} ago`;
+    }
+  }
+
+  // Format status badge
+  function formatStatus(status) {
+    const statusClass = `status-${status.toLowerCase()}`;
+    const displayStatus = status === 'up-and-coming' ? 'Up & Coming' :
+                         status.charAt(0).toUpperCase() + status.slice(1);
+    return `<span class="status-badge ${statusClass}">${displayStatus}</span>`;
+  }
+
+  // Format stars with commas
+  function formatStars(stars) {
+    if (!stars) return '0';
+    return stars.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  // Populate table
+  function populateTable() {
+    const tbody = $('#softwareTable tbody');
+    tbody.empty();
+
+    awesomeJaxData.forEach(lib => {
+      const rowClass = lib.status === 'inactive' ? 'inactive-row' : '';
+      const githubUrl = lib.url;
+      const starsUrl = `https://img.shields.io/github/stars/${lib.owner}/${lib.repo}?style=social`;
+
+      const row = $('<tr>').addClass(rowClass);
+
+      // Library Name (with link)
+      row.append($('<td>').html(
+        `<a href="${githubUrl}" target="_blank" class="text-info">${lib.name}</a>`
+      ));
+
+      // Description
+      row.append($('<td>').html(
+        `<span class="description-cell">${lib.description || 'No description'}</span>`
+      ));
+
+      // Category
+      row.append($('<td>').html(
+        `<span class="category-badge">${lib.category}</span>`
+      ));
+
+      // Stars (with badge or number)
+      if (lib.stars) {
+        row.append($('<td>').html(
+          `<span class="text-warning">★ ${formatStars(lib.stars)}</span>`
+        ));
+      } else {
+        row.append($('<td>').html(
+          `<img src="${starsUrl}" alt="GitHub stars" style="vertical-align: middle;">`
+        ));
+      }
+
+      // Last Updated
+      row.append($('<td>').html(
+        `<span class="last-updated">${formatDate(lib.lastCommit)}</span>`
+      ));
+
+      // Status
+      row.append($('<td>').html(formatStatus(lib.status)));
+
+      tbody.append(row);
+    });
+  }
+
+  // Initialize DataTable
+  function initDataTable() {
+    table = $('#softwareTable').DataTable({
+      pageLength: 25,
+      lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+      order: [[3, 'desc']], // Sort by stars by default
+      columnDefs: [
+        { orderable: true, targets: [0, 3, 4] },
+        { orderable: false, targets: [1, 2, 5] }
+      ],
+      language: {
+        search: "Search libraries:",
+        lengthMenu: "Show _MENU_ libraries",
+        info: "Showing _START_ to _END_ of _TOTAL_ libraries",
+        paginate: {
+          first: "First",
+          last: "Last",
+          next: "Next",
+          previous: "Previous"
+        }
+      }
+    });
+  }
+
+  // Populate filter dropdowns
+  function populateFilters() {
+    // Category filter
+    const categories = [...new Set(awesomeJaxData.map(lib => lib.category))].sort();
+    const categoryDropdown = $('#categoryDropdown');
+    categoryDropdown.empty();
+    categories.forEach(category => {
+      categoryDropdown.append(
+        $('<li>').append(
+          $('<a>')
+            .addClass('dropdown-item')
+            .attr('href', '#')
+            .text(category)
+            .on('click', function(e) {
+              e.preventDefault();
+              filterByCategory(category);
+            })
+        )
+      );
+    });
+
+    // Status filter
+    const statuses = [...new Set(awesomeJaxData.map(lib => lib.status))];
+    const statusDropdown = $('#statusDropdown');
+    statusDropdown.empty();
+
+    const statusOrder = ['active', 'up-and-coming', 'inactive'];
+    statusOrder.forEach(status => {
+      if (statuses.includes(status)) {
+        const displayStatus = status === 'up-and-coming' ? 'Up & Coming' :
+                             status.charAt(0).toUpperCase() + status.slice(1);
+        statusDropdown.append(
+          $('<li>').append(
+            $('<a>')
+              .addClass('dropdown-item')
+              .attr('href', '#')
+              .text(displayStatus)
+              .on('click', function(e) {
+                e.preventDefault();
+                filterByStatus(status);
+              })
+          )
+        );
+      }
+    });
+  }
+
+  // Filter functions
+  function filterByCategory(category) {
+    currentCategoryFilter = category;
+    applyFilters();
+    $('#clearCategoryFilter').show();
+  }
+
+  function filterByStatus(status) {
+    currentStatusFilter = status;
+    applyFilters();
+    $('#clearStatusFilter').show();
+  }
+
+  function applyFilters() {
+    // Clear search
+    table.search('');
+
+    // Build filter function
+    $.fn.dataTable.ext.search.pop(); // Remove any existing custom filter
+
+    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+      const lib = awesomeJaxData[dataIndex];
+
+      // Category filter
+      if (currentCategoryFilter && lib.category !== currentCategoryFilter) {
+        return false;
+      }
+
+      // Status filter
+      if (currentStatusFilter && lib.status !== currentStatusFilter) {
+        return false;
+      }
+
+      return true;
+    });
+
+    table.draw();
+  }
+
+  // Clear filter functions
+  $('#clearCategoryFilter').on('click', function() {
+    currentCategoryFilter = null;
+    applyFilters();
+    $(this).hide();
+  });
+
+  $('#clearStatusFilter').on('click', function() {
+    currentStatusFilter = null;
+    applyFilters();
+    $(this).hide();
+  });
+
+  // Refresh data button
+  $('#refreshData').on('click', function() {
+    const btn = $(this);
+    btn.prop('disabled', true).text('Building...');
+
+    // Show instructions
+    alert('To refresh data:\n\n1. Open terminal in the docs folder\n2. Run: npm run build\n3. Refresh this page\n\nFor faster builds without GitHub data:\nnpm run build:fast');
+
+    btn.prop('disabled', false).text('Refresh Data');
+  });
+
+  // Initialize everything
+  populateTable();
+  initDataTable();
+  populateFilters();
+
+  // Hide clear buttons initially
+  $('#clearCategoryFilter').hide();
+  $('#clearStatusFilter').hide();
+
+  // Display data statistics
+  const stats = {
+    total: awesomeJaxData.length,
+    active: awesomeJaxData.filter(l => l.status === 'active').length,
+    inactive: awesomeJaxData.filter(l => l.status === 'inactive').length,
+    upAndComing: awesomeJaxData.filter(l => l.status === 'up-and-coming').length
+  };
+
+  console.log('Awesome JAX Statistics:', stats);
 });
