@@ -120,6 +120,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [cola](https://github.com/wilson-labs/cola) - Compositional Linear Algebra.  <img src="https://img.shields.io/github/stars/wilson-labs/cola?style=social" align="center">
 - [laplax](https://github.com/laplax-org/laplax) - Laplace approximations in JAX. <img src="https://img.shields.io/github/stars/laplax-org/laplax?style=social" align="center">
 - [thrml](https://github.com/extropic-ai/thrml) - Thermodynamic Hypergraphical Model Library. <img src="https://img.shields.io/github/stars/extropic-ai/thrml?style=social" align="center">
+- [astronomix](https://github.com/leo1200/astronomix) - differentiable (magneto)hydrodynamics for astrophysics in JAX. <img src="https://img.shields.io/github/stars/leo1200/astronomix?style=social" align="center">
 
 
 ### Up and Coming Libraries
