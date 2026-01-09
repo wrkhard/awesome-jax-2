@@ -121,6 +121,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [laplax](https://github.com/laplax-org/laplax) - Laplace approximations in JAX. <img src="https://img.shields.io/github/stars/laplax-org/laplax?style=social" align="center">
 - [thrml](https://github.com/extropic-ai/thrml) - Thermodynamic Hypergraphical Model Library. <img src="https://img.shields.io/github/stars/extropic-ai/thrml?style=social" align="center">
 - [astronomix](https://github.com/leo1200/astronomix) - differentiable (magneto)hydrodynamics for astrophysics in JAX. <img src="https://img.shields.io/github/stars/leo1200/astronomix?style=social" align="center">
+- [memax](https://github.com/smorad/memax) - Deep memory and sequence models in JAX. <img src="https://img.shields.io/github/stars/smorad/memax?style=social" align="center">
 
 
 ### Up and Coming Libraries
@@ -128,6 +129,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [traceax](https://github.com/mancusolab/traceax) - Stochastic trace estimation using JAX. <img src="https://img.shields.io/github/stars/mancusolab/traceax?style=social" align="center">
 - [graphax](https://github.com/jamielohoff/graphax) - Cross-Country Elimination in JAX. <img src="https://img.shields.io/github/stars/jamielohoff/graphax?style=social" align="center">
 - [cd_dynamax](https://github.com/hd-UQ/cd_dynamax) - Extension of dynamax repo to cases with continuous-time dynamics with measurements sampled at possibly irregular discrete times. Allows generic inference of dynamical systems parameters from partial noisy observations via auto-differentiable filtering, SGD, and HMC. <img src="https://img.shields.io/github/stars/hd-UQ/cd_dynamax?style=social" align="center">
+- [jumpax](https://github.com/lockwo/jumpax) - Jump Processes in JAX. <img src="https://img.shields.io/github/stars/lockwo/jumpax?style=social" align="center">
 
 
 ### Inactive Libraries
