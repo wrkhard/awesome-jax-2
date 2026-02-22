@@ -123,6 +123,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [astronomix](https://github.com/leo1200/astronomix) - differentiable (magneto)hydrodynamics for astrophysics in JAX. <img src="https://img.shields.io/github/stars/leo1200/astronomix?style=social" align="center">
 - [memax](https://github.com/smorad/memax) - Deep memory and sequence models in JAX. <img src="https://img.shields.io/github/stars/smorad/memax?style=social" align="center">
 - [JAXMg](https://github.com/flatironinstitute/jaxmg) - JAXMg: A multi-GPU linear solver in JAX. <img src="https://img.shields.io/github/stars/flatironinstitute/jaxmg?style=social" align="center">
+- [exponax](https://github.com/Ceyron/exponax) - Efficient Differentiable n-d PDE Solvers in JAX. <img src="https://img.shields.io/github/stars/Ceyron/exponax?style=social" align="center">
 
 
 ### Up and Coming Libraries
