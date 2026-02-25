@@ -1157,6 +1157,17 @@ const awesomeJaxData = [
     "status": "active",
     "stars": null,
     "lastCommit": null
+  },
+  {
+    "name": "driftax",
+    "url": "https://github.com/wrkhard/driftax",
+    "owner": "wrkhard",
+    "repo": "driftax",
+    "description": "JAX/Flax implmentation of Generative Modeling via Drifting",
+    "category": "Distributions, Sampling, and Probabilistic Libraries",
+    "status": "active",
+    "stars": 5,
+    "lastCommit": null
   }
 ];
 
