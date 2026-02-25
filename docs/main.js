@@ -65,7 +65,6 @@ $(document).ready(function() {
     awesomeJaxData.forEach(lib => {
       const rowClass = lib.status === 'inactive' ? 'inactive-row' : '';
       const githubUrl = lib.url;
-      const starsUrl = `https://img.shields.io/github/stars/${lib.owner}/${lib.repo}?style=social`;
 
       const row = $('<tr>').addClass(rowClass);
 
@@ -84,16 +83,12 @@ $(document).ready(function() {
         `<span class="category-badge">${lib.category}</span>`
       ));
 
-      // Stars (with badge or number)
-      if (lib.stars) {
-        row.append($('<td>').html(
-          `<span class="text-warning">★ ${formatStars(lib.stars)}</span>`
-        ));
-      } else {
-        row.append($('<td>').html(
-          `<img src="${starsUrl}" alt="GitHub stars" style="vertical-align: middle;">`
-        ));
-      }
+      // Stars (with number or dash for unknown)
+      const starsValue = lib.stars || 0;
+      const starsDisplay = lib.stars
+        ? `<span class="text-warning">★ ${formatStars(lib.stars)}</span>`
+        : `<span class="text-muted">★ —</span>`;
+      row.append($('<td>').attr('data-order', starsValue).html(starsDisplay));
 
       // Last Updated
       row.append($('<td>').html(
@@ -115,7 +110,8 @@ $(document).ready(function() {
       order: [[3, 'desc']], // Sort by stars by default
       columnDefs: [
         { orderable: true, targets: [0, 3, 4] },
-        { orderable: false, targets: [1, 2, 5] }
+        { orderable: false, targets: [1, 2, 5] },
+        { type: 'num', targets: [3] }
       ],
       language: {
         search: "Search libraries:",
@@ -152,29 +148,30 @@ $(document).ready(function() {
       );
     });
 
-    // Status filter
-    const statuses = [...new Set(awesomeJaxData.map(lib => lib.status))];
+    // Status filter - always show all options with counts
     const statusDropdown = $('#statusDropdown');
     statusDropdown.empty();
 
     const statusOrder = ['active', 'up-and-coming', 'inactive'];
     statusOrder.forEach(status => {
-      if (statuses.includes(status)) {
-        const displayStatus = status === 'up-and-coming' ? 'Up & Coming' :
-                             status.charAt(0).toUpperCase() + status.slice(1);
-        statusDropdown.append(
-          $('<li>').append(
-            $('<a>')
-              .addClass('dropdown-item')
-              .attr('href', '#')
-              .text(displayStatus)
-              .on('click', function(e) {
-                e.preventDefault();
-                filterByStatus(status);
-              })
-          )
-        );
+      const count = awesomeJaxData.filter(lib => lib.status === status).length;
+      const displayStatus = status === 'up-and-coming' ? 'Up & Coming' :
+                           status.charAt(0).toUpperCase() + status.slice(1);
+      const item = $('<a>')
+        .addClass('dropdown-item')
+        .attr('href', '#')
+        .text(`${displayStatus} (${count})`);
+
+      if (count > 0) {
+        item.on('click', function(e) {
+          e.preventDefault();
+          filterByStatus(status);
+        });
+      } else {
+        item.addClass('disabled text-muted');
       }
+
+      statusDropdown.append($('<li>').append(item));
     });
   }
 

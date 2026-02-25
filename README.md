@@ -47,7 +47,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 
 
 - Natural Language Processing Libraries
-    - [levanter](https://github.com/stanford-crfm/levanter) - Legible, Scalable, Reproducible Foundation Models with Named Tensors and Jax. <img src="https://img.shields.io/github/stars/stanford-crfm/levanter?style=social" align="center">
+    - [levanter](https://github.com/marin-community/levanter) - Legible, Scalable, Reproducible Foundation Models with Named Tensors and Jax. <img src="https://img.shields.io/github/stars/marin-community/levanter?style=social" align="center">
     - [maxtext](https://github.com/AI-Hypercomputer/maxtext) - A simple, performant and scalable Jax LLM! <img src="https://img.shields.io/github/stars/AI-Hypercomputer/maxtext?style=social" align="center">
     - [EasyLM](https://github.com/young-geng/EasyLM) - Large language models (LLMs) made easy, EasyLM is a one stop solution for pre-training, finetuning, evaluating and serving LLMs in JAX/Flax. <img src="https://img.shields.io/github/stars/young-geng/EasyLM?style=social" align="center">
 
@@ -77,7 +77,7 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
     - [jaxns](https://github.com/Joshuaalbert/jaxns) - Probabilistic Programming and Nested sampling in JAX. <img src="https://img.shields.io/github/stars/Joshuaalbert/jaxns?style=social" align="center">
 
 
-- [GPJax](https://github.com/JaxGaussianProcesses/GPJax) - Gaussian processes in JAX. <img src="https://img.shields.io/github/stars/JaxGaussianProcesses/GPJax?style=social" align="center">
+- [GPJax](https://github.com/thomaspinder/GPJax) - Gaussian processes in JAX. <img src="https://img.shields.io/github/stars/thomaspinder/GPJax?style=social" align="center">
 - [tinygp](https://github.com/dfm/tinygp) - The tiniest of Gaussian Process libraries. <img src="https://img.shields.io/github/stars/dfm/tinygp?style=social" align="center">
 - [Diffrax](https://github.com/patrick-kidger/diffrax) - Numerical differential equation solvers in JAX. Autodifferentiable and GPU-capable. <img src="https://img.shields.io/github/stars/patrick-kidger/diffrax?style=social" align="center">
 - [probdiffeq](https://github.com/pnkraemer/probdiffeq) - Probabilistic solvers for differential equations in JAX. Adaptive ODE solvers with calibration, state-space model factorisations, and custom information operators. Compatible with the broader JAX scientific computing ecosystem. <img src="https://img.shields.io/github/stars/pnkraemer/probdiffeq?style=social" align="center">
@@ -132,7 +132,8 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [graphax](https://github.com/jamielohoff/graphax) - Cross-Country Elimination in JAX. <img src="https://img.shields.io/github/stars/jamielohoff/graphax?style=social" align="center">
 - [cd_dynamax](https://github.com/hd-UQ/cd_dynamax) - Extension of dynamax repo to cases with continuous-time dynamics with measurements sampled at possibly irregular discrete times. Allows generic inference of dynamical systems parameters from partial noisy observations via auto-differentiable filtering, SGD, and HMC. <img src="https://img.shields.io/github/stars/hd-UQ/cd_dynamax?style=social" align="center">
 - [jumpax](https://github.com/lockwo/jumpax) - Jump Processes in JAX. <img src="https://img.shields.io/github/stars/lockwo/jumpax?style=social" align="center">
-- [driftax](https://github.com/wrkhard/driftax) - Drifting Generative Models - JAX/Flax implmentation of [Generative Modeling via Drifting](https://arxiv.org/abs/2602.04770) <img src="https://img.shields.io/github/stars/wrkhard/driftax?style=social" align="center">
+- [driftax](https://github.com/wrkhard/driftax) - Drifting Generative Models - JAX/Flax implmentation of [Generative Modeling via Drifting](https://arxiv.org/abs/2602.04770). <img src="https://img.shields.io/github/stars/wrkhard/driftax?style=social" align="center">
+
 
 
 ### Inactive Libraries
@@ -148,7 +149,6 @@ Why do we need another "awesome-jax" list? Existing ones are inactive, and this 
 - [lorax](https://github.com/davisyoshida/lorax) - LoRA for arbitrary JAX models and functions. <img src="https://img.shields.io/github/stars/davisyoshida/lorax?style=social" align="center">
 - [mcx](https://github.com/rlouf/mcx) - Express & compile probabilistic programs for performant inference on CPU & GPU. Powered by JAX. <img src="https://img.shields.io/github/stars/rlouf/mcx?style=social" align="center">
 - [einshape](https://github.com/google-deepmind/einshape) - DSL-based reshaping library for JAX and other frameworks. <img src="https://img.shields.io/github/stars/google-deepmind/einshape?style=social" align="center">
-- [jax-flows](https://github.com/ChrisWaites/jax-flows) - Normalizing Flows in JAX 🌊. <img src="https://img.shields.io/github/stars/ChrisWaites/jax-flows?style=social" align="center">
 - [sklearn-jax-kernels](https://github.com/ExpectationMax/sklearn-jax-kernels) - Composable kernels for scikit-learn implemented in JAX. <img src="https://img.shields.io/github/stars/ExpectationMax/sklearn-jax-kernels?style=social" align="center">
 - [deltapv](https://github.com/romanodev/deltapv) - A photovoltaic simulator with automatic differentiation. <img src="https://img.shields.io/github/stars/romanodev/deltapv?style=social" align="center">
 - [cr-sparse](https://github.com/carnotresearch/cr-sparse) - Functional models and algorithms for sparse signal processing. <img src="https://img.shields.io/github/stars/carnotresearch/cr-sparse?style=social" align="center">

@@ -36,8 +36,11 @@ const LIBRARY_CATEGORIES = [
   'Dimensionality Reduction Libraries'
 ];
 
-// Helper function to make HTTPS requests
-function httpsRequest(url, options = {}) {
+// Helper function to make HTTPS requests (follows redirects)
+function httpsRequest(url, options = {}, redirectCount = 0) {
+  if (redirectCount > 5) {
+    return Promise.reject(new Error('Too many redirects'));
+  }
   return new Promise((resolve, reject) => {
     const urlObj = new URL(url);
     const requestOptions = {
@@ -51,6 +54,10 @@ function httpsRequest(url, options = {}) {
     };
 
     https.get(requestOptions, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        resolve(httpsRequest(res.headers.location, options, redirectCount + 1));
+        return;
+      }
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
@@ -178,8 +185,8 @@ async function parseReadme() {
         // Clean description (remove badges)
         const cleanDesc = restOfLine ? restOfLine.replace(/<img[^>]*>/g, '').trim() : '';
 
-        // Determine category (prefer subcategory if available)
-        const category = currentSubCategory || currentCategory;
+        // Use parent category for filtering
+        const category = currentCategory;
 
         libraries.push({
           name: name.trim(),
